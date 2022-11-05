@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokemon js</title>
+
+    <!-- FONT AWESOME press start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            font-family: 'Press Start 2P', cursive;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+        }
+        button{
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            transition: 200ms;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative; display: inline-block;">
+        <!-- OVELAP SENSE -->
+        <div id="overlapSense" style="
+        background-color: black; 
+        position: absolute; 
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; 
+        opacity: 0; 
+        pointer-events: none;
+        z-index: 10;
+        "></div>
+        <!-- GAME -->
+        <canvas></canvas>
+
+        <div id="battleInterface" style="display: none;" >
+        <!-- health bar -->
+        <div class="health__draggle" style="
+        position: absolute; 
+        top: 60px; 
+        left: 80px; 
+        width: 250px;
+        padding: 12px; 
+        background-color: white; 
+        border: 4px solid black;" 
+        >
+            <h5 style="margin: 8px 0px;" >Draggle</h5>
+            <div id="healthDraggleBar" style="height: 5px; width: 100%; background-color: green;" ></div>
+        </div>
+
+        <div class="health__emby" style="
+        position: absolute; 
+        bottom: 210px; 
+        right: 110px; 
+        width: 250px;
+        padding: 12px; 
+        background-color: white; 
+        border: 4px solid black;" 
+        >
+            <h5 style="margin: 8px 0px;" >Emby</h5>
+            <div id="healthEmbyBar" style="height: 5px; width: 100%; background-color: green;" ></div>
+        </div>
+        <!-- battle bar -->
+        <div style="
+        background-color: white; 
+        width: 100%; 
+        height: 160px; 
+        position: absolute; 
+        bottom: 0; 
+        border-top: 4px solid black;
+        display: flex;
+        ">
+            <div id="battlebox" style="display: grid; grid-template-columns: repeat(2,1fr); width: 66.66%; grid-template-rows: auto; height: 100%;">
+                <!-- main.js will add button selected battle -->
+            </div>
+            <div style="width: 33.33%; display: flex; justify-content: center; align-items: center; border-left:4px solid black ;" >
+                <h3 id="battletype" >attack type</h3>
+            </div>
+        </div>
+        <!-- dialog -->
+        <div id="dialogbox" style="
+        bottom: 0; 
+        left: 0;
+        right: 0; 
+        height: 160px; 
+        padding: 10px 10px;
+        display: flex;
+        cursor: pointer;
+        position: absolute; 
+        background-color: white; 
+        border-top: 4px solid black;
+        display: none;
+        ">
+            <p></p>
+        </div>
+        </div>
+
+    </div>
+
+    <!-- lib js game -->
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- howl -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- DATA about map game -->
+    <script src="./static/data/collision.js"></script>
+    <script src="./static/data/battlezone.js"></script>
+    <!-- audio game -->
+    <script src="./static/js/audio.js"></script>
+    <!-- obj attackes -->
+    <script src="./static/js/Attacks.js"></script>
+    <!-- Class game -->
+    <script src="./static/js/Sprite.js"></script>
+    <!-- main js file -->
+    <script src="./static/js/main.js"></script>
+</body>
+
+</html>
